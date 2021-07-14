@@ -7,11 +7,14 @@ const cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
+const login = require('./router/login');
+
 const checkLogin = require('./lib/checkLogin');
 
 const data_path = './data/';
 const port = 3000;
 
+app.use('/login', login);
 
 app.get('/', (req, res) => {
     id = 2;
