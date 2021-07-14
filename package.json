@@ -1,0 +1,19 @@
+{
+  "name": "208",
+  "version": "1.0.0",
+  "description": "Web application for 2021 208 students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlarjsdn2313/208.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlarjsdn2313/208/issues"
+  },
+  "homepage": "https://github.com/rlarjsdn2313/208#readme"
+}
