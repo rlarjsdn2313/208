@@ -13,25 +13,24 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // routers
-const login = require('./router/login');
+const login = require('./routes/login');
 
 // functions
 const checkLogin = require('./lib/checkLogin');
 
 // constants
-const data_path = './data/';
-const port = 3000;
+const constants = require('./lib/constants');
 
 app.use('/login', login);
 
 app.get('/', (req, res) => {
     id = 2;
     password = '12345';
-    checkLogin.checkLogin(`${id}@${password}`, data_path);
+    console.log(checkLogin.checkLogin(`${id}@${password}`, constants.data_path));
     res.send('hello');
 });
 
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(constants.port, () => {
+    console.log(`Server is running on port ${constants.port}`);
 });
