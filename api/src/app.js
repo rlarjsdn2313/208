@@ -2,10 +2,13 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 // middle wares
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
@@ -21,9 +24,9 @@ const checkLogin = require('./lib/checkLogin');
 // constants
 const constants = require('./lib/constants');
 
-app.use('/login', login);
+app.use('/api/login', login);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('hello');
 });
 
