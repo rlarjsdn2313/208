@@ -24,9 +24,6 @@ const constants = require('./lib/constants');
 app.use('/login', login);
 
 app.get('/', (req, res) => {
-    id = 2;
-    password = '12345';
-    console.log(checkLogin.checkLogin(`${id}@${password}`, constants.data_path));
     res.send('hello');
 });
 
