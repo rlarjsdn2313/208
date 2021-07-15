@@ -18,15 +18,16 @@ app.set('view engine', 'ejs');
 // routers
 const login = require('./routes/login');
 
-// functions
-const checkLogin = require('./lib/checkLogin');
-
 // constants
 const constants = require('./lib/constants');
 
-app.use('/api/login', login);
+app.use('/login', login);
 
-app.get('/api', (req, res) => {
+// set view engine
+app.set('view engine', 'ejs');
+
+
+app.get('/', (req, res) => {
     res.send('hello');
 });
 
