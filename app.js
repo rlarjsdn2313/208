@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 
 // middle wares
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser());
 app.use(cookieParser());
 
 // ejs setting
@@ -17,6 +17,9 @@ app.set('view engine', 'ejs');
 
 // routers
 const login = require('./routes/login');
+
+// functions
+const checkLogin = require('./lib/checkLogin');
 
 // constants
 const constants = require('./lib/constants');
@@ -28,6 +31,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) => {
+
     res.send('hello');
 });
 

@@ -10,6 +10,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/check', (req, res) => {
-
+    res.cookie('input', req.body.input);
+    res.redirect('/login');
 });
+
+
 module.exports = router;
