@@ -31,6 +31,12 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) => {
+    let checker = checkLogin.checkLogin(req.cookies.input, constants.data_path);
+    if (checker['error']) {
+        res.redirect('/login');
+        return;
+    }
+
 
     res.send('hello');
 });
