@@ -20,6 +20,7 @@ const login = require('./routes/login');
 
 // functions
 const checkLogin = require('./lib/checkLogin');
+const pageViewer = require('./lib/pageViewer');
 
 // constants
 const constants = require('./lib/constants');
@@ -44,7 +45,7 @@ app.get('/', (req, res) => {
 
 app.get('/school/:page', (req, res) => {
     checkLogin.checkCookie(req, res, constants);
-    console.log(req.params.page);
+    console.log(pageViewer.pageViewer(req.params.page, 'school', constants));
 });
 
 
