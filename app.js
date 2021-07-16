@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 
 // routers
 const login = require('./routes/login');
+const school = require('./routes/school');
 
 // functions
 const checkLogin = require('./lib/checkLogin');
@@ -26,6 +27,7 @@ const pageViewer = require('./lib/pageViewer');
 const constants = require('./lib/constants');
 
 app.use('/login', login);
+app.use('/school', school);
 
 // set view engine
 app.set('view engine', 'ejs');
@@ -43,10 +45,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/school/:page', (req, res) => {
-    checkLogin.checkCookie(req, res, constants);
-    console.log(pageViewer.pageViewer(req.params.page, 'school', constants));
-});
+// app.get('/school/:page', (req, res) => {
+//     checkLogin.checkCookie(req, res, constants);
+//     console.log(pageViewer.pageViewer(req.params.page, 'school', constants));
+// });
 
 
 app.listen(constants.port, () => {
