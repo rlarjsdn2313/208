@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var constants = require('../lib/constants');
-var checkLogin = require('../lib/checkLogin');
+// var constants = require('../lib/constants');
+// var checkLogin = require('../lib/checkLogin');
 
 router.get('/', (req, res) => {
     res.render('login');
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.post('/check', (req, res) => {
     res.cookie('input', req.body.input);
-    res.redirect('/');
+    res.redirect('/school/1');
 });
 
 

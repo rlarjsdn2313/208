@@ -31,10 +31,6 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) => {
-    if (req.cookies.input == undefined) {
-        res.cookie('input', '');
-    }
-
     let checker = checkLogin.checkLogin(req.cookies.input, constants.data_path);
     if (checker['error']) {
         res.redirect('/login');
@@ -43,6 +39,12 @@ app.get('/', (req, res) => {
 
 
     res.send('hello');
+});
+
+
+app.get('/school/:page', (req, res) => {
+    checkLogin.checkCookie(req, res, constants);
+    console.log(req.params.page);
 });
 
 
