@@ -7,9 +7,73 @@
     <title>로그인</title>
 </head>
 <body>
-    <form action="/login/check" method="POST">
-        <input type="text" name="input" placeholder="id@password"></input>
-        <input type="submit"></submit>
-    </form>
+    </div>
+    <div class="container">
+        <form action="/login/check" method="POST">
+            <div>
+                <input type="text" name="input" id="input" placeholder="id@password" autocomplete="off"></input>
+            </div>
+            <div>
+                <button type="submit" class="bn39">Login</button>
+            </div>
+        </form>
+    </div>
 </body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        display: flex;
+        background-color: #f4f4f8;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+
+    }
+
+    .container {
+        margin: auto;
+    }
+
+    input, button {
+        width: 200px;
+        height: 43px;
+        border-radius: 6px;
+
+    }
+
+    input {
+
+        border: 2px solid #e6e6ea;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        top: 100px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+    }
+
+    input:focus {
+        border-color: #fed766;
+        box-shadow: 0 0 8px 0 #fed766;
+    }
+    
+    button {
+        margin-top: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        background-color: #fed766 ;
+        color: #f4f4f8;
+        border: none;
+
+    }
+
+    /* #fe4a49 • #2ab7ca • #fed766 • #e6e6ea • #f4f4f8 */
+
+</style>
 </html>
