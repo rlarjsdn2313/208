@@ -16,6 +16,8 @@ app.set('view engine', 'ejs');
 const login = require('./routes/login');
 const school = require('./routes/school');
 const logout = require('./routes/logout');
+const article = require('./routes/article');
+const write = require('./routes/write');
 
 // functions
 const checkLogin = require('./lib/checkLogin');
@@ -27,6 +29,8 @@ const constants = require('./lib/constants');
 app.use('/login', login);
 app.use('/school', school);
 app.use('/logout', logout);
+app.use('/article', article);
+app.use('/write', write);
 
 // set view engine
 app.set('view engine', 'ejs');
