@@ -18,6 +18,7 @@ const school = require('./routes/school');
 const logout = require('./routes/logout');
 const article = require('./routes/article');
 const write = require('./routes/write');
+const change = require('./routes/change');
 
 // functions
 const checkLogin = require('./lib/checkLogin');
@@ -31,6 +32,7 @@ app.use('/school', school);
 app.use('/logout', logout);
 app.use('/article', article);
 app.use('/write', write);
+app.use('/change', change);
 
 // set view engine
 app.set('view engine', 'ejs');
