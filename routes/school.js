@@ -24,24 +24,24 @@ router.get('/:page', (req, res) => {
 
     let last_page = parseInt(fs.readdirSync(`${constants.data_path}/school/`).length / 10) + 1
     let back = 
-`<div class="highlight">
+`<div class="highlight move">
 <a href="/school/${req.params.page - 1}">back</a>
 </div>`;
     let forward = 
-`<div class="highlight">
+`<div class="highlight move">
 <a href="/school/${parseInt(req.params.page) + 1}">forward</a>
 </div>`;
 
     if (req.params.page == 1) {
         back = 
-`<div class="">
+`<div class="move">
 <a>back</a>
 </div>`;    
     }
 
     if (req.params.page == last_page) {
         forward = 
-`<div class="">
+`<div class="move">
 <a>forward</a>
 </div>`;
     }
@@ -55,8 +55,9 @@ router.get('/:page', (req, res) => {
 
         result +=
 `
-<div>
-    <h1>${date[0]}년 ${date[1]}월 ${date[2]}일</h1>
+<div class="content">
+    <h1>${date[0]}/${date[1]}/${date[2]}</h1>
+    <div class="hr"></div>
     ${content}
 </div>
 `;

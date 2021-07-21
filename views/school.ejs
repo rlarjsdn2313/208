@@ -7,13 +7,108 @@
     <title>알림장</title>
 </head>
 <body>
-    <%- content %>
-    <%- back %>
-    <%- forward %>
+    <div class="header">
+        
+    </div>
+    <div class="container">
+        <%- content %>
+    </div>
+    <div class="footer">
+        <div class="back key">
+            <%- back %>
+        </div>
+
+        <div class="forward key">
+            <%- forward %>
+        </div>
+    </div>
+
 </body>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+    html, body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;   
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: flex;
+        background-color: #f4f4f8;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        display:table;
+        margin-bottom: 200px;
+    }
+
+    .content {
+        padding: 0;
+        margin: 0;
+        padding: 10px;
+        margin: 20px;
+        margin-bottom: 40px;
+        background: #e6e6ea;
+        border-radius: 8px;
+        box-shadow: 0 0 8px 0 #aaaaaa;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 23px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .hr {
+        width: 100%;
+        background-color: white;
+        height: 3px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .footer {
+        position: fixed;
+        width: 100vw;
+        height: 100px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f8;
+    }
+
     .highlight {
         font-weight: bold;
+        text-decoration: none;
+    }
+
+    .key {
+        margin: 80px;
+        border-radius: 6px;
+        background-color: #2ab7ca;
+        padding: 10px;
+        width: 80px;
+        display: flex;
+        box-shadow: 0 0 8px 0 #aaaaaa;
+    }
+    
+    .back {
+        float: left;
+    }
+
+    .forward {
+        float: right;
+    }
+
+    .move {
+        margin: auto;
+        color: #f4f4f8;
     }
 </style>
 </html>
