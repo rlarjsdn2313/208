@@ -63,7 +63,7 @@ router.get('/:page', (req, res) => {
 `;
         i++;
     }
-    res.render('school', { content: result, back: back, forward: forward });
+    res.render('school', { title: '알림장', content: result, back: back, forward: forward });
 });
 
 

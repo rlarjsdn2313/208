@@ -7,9 +7,17 @@
     <title>알림장</title>
 </head>
 <body>
-    <div class="header">
-        
-    </div>
+    <header class="header">
+        <%- title %>
+        <div class="options">
+            <a class="option" href="/school/1">알림장</a>
+            <a class="option" href="/article/1">수다</a>
+            <a class="option" href="/write">쓰기</a>
+            <a class="option" href="/logout">로그아웃</a>
+            <a class="option" href="/change">비번변경</a>
+        </div>
+
+    </header>
     <div class="container">
         <%- content %>
     </div>
@@ -26,25 +34,64 @@
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-
+    @font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
     html, body {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         margin: 0;
         padding: 0;   
         position: fixed;
         overflow-x: hidden;
-        overflow-y: scroll;
         display: flex;
         background-color: #f4f4f8;
         font-family: 'Roboto', sans-serif;
     }
 
+    .header {
+        position: fixed;
+        margin-bottom: 100px;
+        width: 100%;
+        height: 60px;
+        float: top;
+        margin: 0;
+        padding: 0;
+        background-color: #2ab7ca;
+        text-align: left;
+        font-family: 'BMJUA';
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 58px;
+        box-shadow: 0 0 8px 0 #aaaaaa;
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+    
+    .options {
+        font-size: 16px;
+        font-weight: normal;
+        float: right;
+        margin-right: 27px;
+    }
+
+    .option {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .block {
+        height: 100px;
+    }
+
     .container {
         width: 80%;
         margin: auto;
-        display:table;
-        margin-bottom: 200px;
+        padding-bottom: 150px;
+        padding-top: 70px;
     }
 
     .content {
@@ -53,7 +100,7 @@
         padding: 10px;
         margin: 20px;
         margin-bottom: 40px;
-        background: #e6e6ea;
+        background: #fed766;
         border-radius: 8px;
         box-shadow: 0 0 8px 0 #aaaaaa;
     }
@@ -65,13 +112,20 @@
         margin-bottom: 10px;
     }
 
+    h2 {
+        font-size: 19px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
     .hr {
         width: 100%;
         background-color: white;
-        height: 3px;
+        height: 1px;
         margin: 0 auto;
         margin-bottom: 10px;
     }
+
     .footer {
         position: fixed;
         width: 100vw;
@@ -81,11 +135,11 @@
         justify-content: center;
         align-items: center;
         background-color: #f4f4f8;
+        box-shadow: 0 0 8px 0 #aaaaaa;
     }
 
     .highlight {
         font-weight: bold;
-        text-decoration: none;
     }
 
     .key {
@@ -104,6 +158,11 @@
 
     .forward {
         float: right;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
     }
 
     .move {

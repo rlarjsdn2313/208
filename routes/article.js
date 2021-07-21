@@ -24,24 +24,24 @@ router.get('/:page', (req, res) => {
 
     let last_page = parseInt(fs.readdirSync(`${constants.data_path}/article/`).length / 10) + 1
     let back = 
-`<div class="highlight">
+`<div class="highlight move">
 <a href="/article/${req.params.page - 1}">back</a>
 </div>`;
     let forward = 
-`<div class="highlight">
+`<div class="highlight move">
 <a href="/article/${parseInt(req.params.page) + 1}">forward</a>
 </div>`;
 
     if (req.params.page == 1) {
         back = 
-`<div class="">
+`<div class="move">
 <a>back</a>
 </div>`;    
     }
 
     if (req.params.page == last_page) {
         forward = 
-`<div class="">
+`<div class="move">
 <a>forward</a>
 </div>`;
     }
@@ -56,15 +56,17 @@ router.get('/:page', (req, res) => {
 
         result +=
 `
-<div>
-    <h1>${date[0]}년 ${date[1]}월 ${date[2]}일 ${date[3]}시</h1>
+<div class="content">
+    <h1>${date[0]}/${date[1]}/${date[2]}/${date[3]}</h1>
+    <div class="hr"></div>
+
     <h2>${writer}</h2>
     ${content}
 </div>
 `;
         i++;
     }
-    res.render('school', { content: result, back: back, forward: forward });
+    res.render('school', { content: result, back: back, forward: forward, title: '수다' });
 });
 
 
