@@ -4,6 +4,7 @@ const app = express();
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const favicon = require('serve-favicon');
 
 // middle wares
 app.use(bodyParser());
@@ -27,6 +28,7 @@ const pageViewer = require('./lib/pageViewer');
 // constants
 const constants = require('./lib/constants');
 
+app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/login', login);
 app.use('/school', school);
 app.use('/logout', logout);
